@@ -58,7 +58,7 @@ function App() {
 
   return (
     <>
-      <h1> Users Website </h1>
+      <h1 className="text-5xl font-bold"> Users Website </h1>
 
       <div>
         <input type="text"

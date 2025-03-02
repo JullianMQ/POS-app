@@ -1,11 +1,11 @@
-name: Deploy Frontend
+name: Deploy Client
 
 on:
   push:
     branches:
       - test-branch
     paths:
-      - "frontend/**"
+      - "client/**"
 
 jobs:
   deploy:
@@ -17,17 +17,17 @@ jobs:
 
       - name: Install Dependencies
         run: |
-          cd frontend
+          cd client
           npm install
 
       - name: Build React App
         run: |
-          cd frontend
+          cd client
           npm run build
 
       - name: Deploy to S3
         run: |
-          aws s3 sync frontend/dist/ s3://pos-frontend-2200 --delete
+          aws s3 sync client/dist/ s3://pos-frontend-2200 --delete
 
       - name: Invalidate CloudFront Cache
         run: |

@@ -26,6 +26,11 @@ jobs:
         run: |
           cd client
           npm install
+          
+      - name: Run Test
+        run: |
+          cd client
+          npm tets
 
       - name: Build React App
         run: |
